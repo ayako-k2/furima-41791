@@ -3,20 +3,19 @@
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
-| nickname            | string     | null: false, uniqie: true      |
-| email               | string     | null: false, uniqie: true      |
-| password            | string     | null: false                    |
+| nickname            | string     | null: false                    |
+| email               | string     | null: false, unique: true      |
 | encrypted_password  | string     | null: false                    |
 | lastname            | string     | null: false                    |
 | firstname           | string     | null: false                    |
-| lastname(kana)      | string     | null: false                    |
-| firstname(kana)     | string     | null: false                    |
+| lastname_kana       | string     | null: false                    |
+| firstname_kana      | string     | null: false                    |
 | birthday            | date       | null: false                    |
 
 
 ### Association
 - has_many :items
-- has_one  :purchase
+- has_many :purchases 
 
 ## itemsテーブル
 
@@ -31,7 +30,6 @@
 | shipdate_id         | integer    | null: false                    |
 | price               | integer    | null: false                    |
 | user                | references | null: false, foreign_key: true |
-| purchase            | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -49,6 +47,7 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
+- has_one :address
 
 
 ## addressesテーブル
@@ -60,7 +59,7 @@
 | city                | string     | null: false                    |
 | address1            | string     | null: false                    |
 | address2            | string     |                                |
-| tel                 | integer    | null: false                    |
+| tel                 | string     | null: false                    |
 | purchase            | references | null: false, foreign_key: true |
 
 
