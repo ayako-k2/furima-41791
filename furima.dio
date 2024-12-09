@@ -1,0 +1,58 @@
+<mxfile host="65bd71144e">
+    <diagram id="A7Nv0EWhDO-z0_5Wbr7_" name="ページ1">
+        <mxGraphModel dx="825" dy="665" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="users" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="540" width="200" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;ul&gt;&lt;li&gt;nickname&lt;/li&gt;&lt;li&gt;email&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;encrypted_password&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;lastname&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;firstname&lt;/span&gt;&lt;/li&gt;&lt;li&gt;lastname_kana&lt;/li&gt;&lt;li&gt;firstname_kana&lt;/li&gt;&lt;li&gt;birthday&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry y="20" width="170" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="items" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="503" y="540" width="196" height="274" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;div style=&quot;&quot;&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;item-name&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;description&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;categroy_id&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;condition_id&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;deliveryfee_id&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;prefecture_id&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;shipdate_id&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;price&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;user&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="4" vertex="1">
+                    <mxGeometry x="-10" y="34" width="140" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="addresses" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="800" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;ul&gt;&lt;li&gt;postalcode&lt;/li&gt;&lt;li&gt;prefecture_id&lt;/li&gt;&lt;li&gt;city&lt;/li&gt;&lt;li&gt;address1&lt;/li&gt;&lt;li&gt;address2&lt;/li&gt;&lt;li&gt;tel&lt;/li&gt;&lt;li&gt;purchase&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;width: 12px; z-index: 1; touch-action: none; top: 69px; left: 212px; bottom: 37px;&quot; class=&quot;geHsplit&quot;&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="8" vertex="1">
+                    <mxGeometry x="4" y="94" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="endArrow=ERmany;html=1;endFill=0;startArrow=ERone;startFill=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="643" as="sourcePoint"/>
+                        <mxPoint x="500" y="643" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="" style="endArrow=ERmany;html=1;startArrow=ERone;startFill=0;endFill=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2" target="15" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="249" y="540" as="sourcePoint"/>
+                        <mxPoint x="270" y="470" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="purchases" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="860" width="199" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;ul&gt;&lt;li&gt;user&lt;/li&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;width: 12px; z-index: 1; touch-action: none; top: 69px; left: 212px; bottom: 37px;&quot; class=&quot;geHsplit&quot;&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="15" vertex="1">
+                    <mxGeometry x="4" y="40" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="endArrow=ERone;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;startArrow=ERone;startFill=0;endFill=0;" parent="1" source="15" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="450" y="680" as="sourcePoint"/>
+                        <mxPoint x="550" y="820" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="endArrow=ERone;html=1;startArrow=ERone;startFill=0;endFill=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="910" as="sourcePoint"/>
+                        <mxPoint x="500" y="910" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
