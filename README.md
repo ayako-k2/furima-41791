@@ -24,33 +24,26 @@
 | ------------------- | ---------- | ------------------------------ |
 | item_name           | string     | null: false                    |
 | description         | text       | null: false                    |
-| category            | integer    | null: false                    |
-| condition           | integer    | null: false                    |
-| deliveryfee         | integer    | null: false                    |
-| shipfrom            | integer    | null: false                    |
-| shipdate            | integer    | null: false                    |
+| category_id         | integer    | null: false                    |
+| condition_id        | integer    | null: false                    |
+| deliveryfee_id      | integer    | null: false                    |
+| prefecture_id       | integer    | null: false                    |
+| shipdate_id         | integer    | null: false                    |
 | price               | integer    | null: false                    |
-| user_id             | reference  | null: false, foreign_key: true |
-| purchase_id         | reference  | null: false, foreign_key: true |
+| user                | references | null: false, foreign_key: true |
+| purchase            | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
 - has_one :purchase
-- has_many :comments
 
 
 ## purchasesテーブル
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
-| postalcode          | string     | null: false                    |
-| prefecture          | integer    | null: false                    |
-| city                | string     | null: false                    |
-| address1            | string     | null: false                    |
-| address2            | string     | null: false                    |
-| tel                 | integer    | null: false                    |
-| user_id             | reference  | null: false, foreign_key: true |
-| item_id             | reference  | null: false, foreign_key: true |
+| user                | references | null: false, foreign_key: true |
+| item                | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -58,15 +51,24 @@
 - belongs_to :item
 
 
-## commentsテーブル
+## addressesテーブル
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
-| comment             | text       | null: false                    |
+| postalcode          | string     | null: false                    |
+| prefecture_id       | integer    | null: false                    |
+| city                | string     | null: false                    |
+| address1            | string     | null: false                    |
+| address2            | string     |                                |
+| tel                 | integer    | null: false                    |
+| purchase            | references | null: false, foreign_key: true |
 
 
 ### Association
-- belongs_to :item
+- belongs_to :purchase
+
+
+
 
 
 
