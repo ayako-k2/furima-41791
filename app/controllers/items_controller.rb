@@ -1,16 +1,19 @@
 class ItemsController < ApplicationController
 
-  def index
-    @items = Item.all
-  end
+  # def index
+  #   @items = Item.all
+  # end
 
   def new
     @item = Item.new
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 
   def create
     @item = Item.new(item_params)
-
+      
       if @item.save
         redirect_to root_path
       else

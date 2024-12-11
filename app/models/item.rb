@@ -14,8 +14,8 @@ class Item < ApplicationRecord
   validates :description, presence: {message:"can't be blank" }
   validates :price, 
              presence: true,
-             format: { with: /\A[0-9]+\z/, message: 'must be entered as a one-byte number and set within the range of ¥300 to ¥9,999,999.' }, 
-             numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+             numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: 'must be a one-byte number and set within the range of ¥300 to ¥9,999,999.' }
+          
 
   require 'active_hash'
   extend ActiveHash::Associations::ActiveRecordExtensions
