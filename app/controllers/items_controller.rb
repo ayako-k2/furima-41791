@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
 
-  # def index
-  #   @items = Item.all
-  # end
+  def index
+    @items = Item.all.order("created_at DESC")
+    @items_exist = Item.exists?
+  end
 
   def new
     @item = Item.new
