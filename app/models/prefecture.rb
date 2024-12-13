@@ -19,7 +19,6 @@ class Prefecture < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :items 
-  #, :purchases
-
+  has_many :items, :purchases
+  
  end
