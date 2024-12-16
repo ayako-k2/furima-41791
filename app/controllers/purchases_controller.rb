@@ -2,7 +2,7 @@ class PurchasesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:index, :create, :show]
   before_action :check_owner, only: [:index, :create, :show]
-  
+  before_action :check_sold_out, only: [:index, :create, :show]
 
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
@@ -10,7 +10,6 @@ class PurchasesController < ApplicationController
   end
 
   def create    
-   
     @purchase_address = PurchaseAddress.new(purchase_address_params)
     if @purchase_address.valid? 
       pay_item
@@ -32,6 +31,12 @@ class PurchasesController < ApplicationController
 
   def check_owner
     if @item.user_id == current_user.id
+      redirect_to root_path
+    end
+  end
+
+  def check_sold_out
+    if @item.purchase.present?
       redirect_to root_path
     end
   end

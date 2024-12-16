@@ -59,8 +59,8 @@ class ItemsController < ApplicationController
   end
 
   def redirect
-    unless current_user.id == @item.user_id
-      redirect_to action: :index
+    if current_user.id != @item.user_id || Purchase.exists?(item_id: @item.id)
+      redirect_to root_path
     end
   end
 

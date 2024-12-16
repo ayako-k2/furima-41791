@@ -2,7 +2,7 @@ class PurchaseAddress
   include ActiveModel::Model
   attr_accessor :postalcode, :prefecture_id, :city, :address, :building_name, :tel, :user_id, :item_id, :token
 
-  validates :postalcode, presence: true, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
+  validates :postalcode, presence: true, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)" }
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }, presence: true
   validates :city, presence: {message: "can't be blank"}
   validates :address, presence: {message: "can't be blank"}

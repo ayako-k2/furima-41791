@@ -28,6 +28,7 @@ class Item < ApplicationRecord
   validates :category_id, :condition_id, :deliveryfee_id, :prefecture_id, :shipdate_id, numericality: { other_than: 1, message: "can't be blank" }, presence: true
 
   belongs_to :user
+  has_one :purchase
 
 end
 
