@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-
+  attr_accessor :purchased
 
   has_one_attached :image
   validate :image_presence

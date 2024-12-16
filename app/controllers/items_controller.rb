@@ -5,6 +5,9 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.order("created_at DESC")
+    @items.each do |item|
+      item.purchased = Purchase.exists?(item_id: item.id)
+    end
   end
 
   def new
@@ -22,7 +25,12 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item.purchased = Purchase.exists?(item_id: @item.id) 
+    if @item.purchased
+      redirect_to items_path
+    else
     @user = @item.user
+    end
   end
 
   def edit
