@@ -1,0 +1,12 @@
+FactoryBot.define do
+  factory :purchase_address do
+    postalcode            {'123-4567'}
+    prefecture_id         {2}
+    city                  {'Sample City'}
+    address               {'123 Street'}
+    building_name         {'Sample building 102'}
+    tel                   {'09012345678'}
+    token                 {'tok_abcdefghijk00000000000000000'}
+  end
+end
+
