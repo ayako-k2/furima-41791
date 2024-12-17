@@ -12,6 +12,10 @@ require 'rails_helper'
       it '全ての値が正しく入力されていれば保存できること' do
         expect(@purchase_address).to be_valid
       end
+      it '建物名が空でも保存できること' do
+        @purchase_address.building_name = ''
+        expect(@purchase_address).to be_valid
+      end
     end
 
     context '保存できない場合' do
@@ -57,6 +61,16 @@ require 'rails_helper'
       end
       it '電話番号に全角が含まれると登録できない' do
         @purchase_address.tel = '１２３456789999'
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include('Tel is invalid. It should be 10 to 11 digits without hyphens.')
+      end
+      it '電話番号が9桁以下だと登録できない' do
+        @purchase_address.tel = '12345678'
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include('Tel is invalid. It should be 10 to 11 digits without hyphens.')
+      end
+      it '電話番号が12桁以上だと登録できない' do
+        @purchase_address.tel = '12345678999999'
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include('Tel is invalid. It should be 10 to 11 digits without hyphens.')
       end
