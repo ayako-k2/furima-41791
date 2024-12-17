@@ -1,8 +1,8 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_item, only: [:index, :create, :show]
-  before_action :check_owner, only: [:index, :create, :show]
-  before_action :check_sold_out, only: [:index, :create, :show]
+  before_action :set_item, only: [:index, :create]
+  before_action :check_owner, only: [:index, :create]
+  before_action :check_sold_out, only: [:index, :create]
 
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
@@ -19,9 +19,6 @@ class PurchasesController < ApplicationController
       gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
       render :index, status: :unprocessable_entity
     end
-  end
-
-  def show
   end
 
   private

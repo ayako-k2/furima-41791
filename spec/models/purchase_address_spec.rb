@@ -3,9 +3,7 @@ require 'rails_helper'
   RSpec.describe PurchaseAddress, type: :model do
   before do 
     @user = FactoryBot.create(:user)  
-    # puts "User created: #{@user.inspect}" 
     @item = FactoryBot.create(:item, user: @user)  
-    # puts "Item created: #{@item.inspect}" 
     @purchase_address = FactoryBot.build(:purchase_address, user_id: @user.id, item_id: @item.id)
   end
 
@@ -66,6 +64,21 @@ require 'rails_helper'
         @purchase_address.tel = '090-1234-5678'
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include('Tel is invalid. It should be 10 to 11 digits without hyphens.')
+      end    
+      it 'user_idが存在しなければ登録できない' do
+        @purchase_address.user_id = nil
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include("User can't be blank")
+      end  
+      it 'item_idが存在しなければ登録できない' do
+        @purchase_address.item_id = nil
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include("Item can't be blank")
+      end    
+      it 'tokenが空では登録できない' do
+        @purchase_address.token = nil
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include("Token can't be blank")
       end    
     end
   end
