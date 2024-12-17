@@ -5,8 +5,6 @@ FactoryBot.define do
     city                  {'Sample City'}
     address               {'123 Street'}
     tel                   {'09012345678'}
-    user_id               {2}
-    item_id               {2}
     token                 {'tok_abcdefghijk00000000000000000'}
   end
 end
