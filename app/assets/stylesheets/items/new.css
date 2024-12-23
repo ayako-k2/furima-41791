@@ -73,20 +73,6 @@
 /* /共通 */
 
 /* 商品画像 */
-
-.preview-box {
-  display: flex;
-  justify-content: space-between;
-}
-
-.preview-image {
-  width: 180px;
-  height: 130px;
-  object-fit: cover; /* 画像の縦横比を維持しながら、枠に収める */
-  display: block;    /* 一貫性を保つため */
-  margin-right: 80px;
-}
-
 .img-upload {
   display: flex;
   justify-content: space-between;
