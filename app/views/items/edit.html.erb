@@ -17,11 +17,14 @@ app/assets/stylesheets/items/new.css %>
         商品画像
         <span class="indispensable">必須</span>
       </div>
+      <div class="preview-box">
+      <div id="previews"></div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image,  id:"item-image" %>
+        <%= f.file_field :image,  id:"item-image-upload" %>
+      </div>
       </div>
     </div>
     <%# /商品画像 %>
