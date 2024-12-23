@@ -29,8 +29,7 @@ document.addEventListener('turbo:load', function(){
       const previewImage = document.createElement('img');
       previewImage.setAttribute('class', 'preview-image');
       previewImage.setAttribute('src', blob);
-      previewImage.style.width = "200px"; 
-      previewImage.style.height = "150px"; 
+   
 
       // 生成したHTMLの要素をブラウザに表示させる
       previewWrapper.appendChild(previewImage);
